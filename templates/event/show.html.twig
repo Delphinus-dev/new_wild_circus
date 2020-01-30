@@ -1,42 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Event{% endblock %}
+{% block title %}Wild Circus -{{ event.name }}{% endblock %}
 
 {% block body %}
-    <h1>Event</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ event.name }}</td>
-            </tr>
-            <tr>
-                <th>Photo</th>
-                <td>{{ event.photo }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ event.description }}</td>
-            </tr>
-            <tr>
-                <th>FirstDay</th>
-                <td>{{ event.firstDay ? event.firstDay|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>LastDay</th>
-                <td>{{ event.lastDay ? event.lastDay|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    {# page-content-wrapper #}
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
 
-    <a href="{{ path('event_index') }}">back to list</a>
+            {% if event is defined and not null %}
 
-    <a href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
+                    <div class="container">
+                        <img src="{{ event.photo }}" alt="{{ event.name }}" style="width:100%;">
+                        <div class="content">
+                            <h1>{{ event.name }}</h1>
+                            <p>{{ event.firstDay ? event.firstDay|date('Y-m-d') : '' }} to {{ event.lastDay ? event.lastDay|date('Y-m-d') : '' }}</p>
+                            <p>{{ event.description }}</p>
 
-    {{ include('event/_delete_form.html.twig') }}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <div>
+                                    <a href="{{ path('event_index') }}">Back to list</a>
+                                </div>
+                                <div>
+                                    <a href="{{ path('event_edit', {'id': event.id}) }}">Edit</a>
+                                </div>
+                                <div>
+                                    {{ include('event/_delete_form.html.twig') }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+            {% else %}
+                <div class="container">
+                    <img src="https://cdn.pixabay.com/photo/2018/07/22/20/02/horse-3555391_960_720.jpg" alt="Illustration" style="width:100%;">
+                    <div class="content">
+                        <h1>Oops, no content here...</h1>
+                        <p>There is no event with these specifications.</p>
+                        <div><a class="btn btn-warning" href="{{ path('event_index') }}">Back to list</a></div>
+                    </div>
+                </div>
+            {% endif %}
+
+            <button id="menu-toggle" class="btn btn-secondary"><i id="toggleIcon" class="fa fa-angle-double-down">
+                </i> Toggle Menu <i class="fa fa-filter"></i></button>
+        </div>
+    </div>
 {% endblock %}

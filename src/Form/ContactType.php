@@ -3,6 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Contact;
+use App\Entity\Status;
+use App\Entity\Theme;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -14,10 +17,16 @@ class ContactType extends AbstractType
         $builder
             ->add('email')
             ->add('message')
-            ->add('time')
-            ->add('user')
-            ->add('theme')
-            ->add('status')
+            ->add('time') // TODO date du jour ??
+            ->add('user') // TODO user connecté ??
+            ->add('theme', EntityType::class, [
+                'class' => Theme::class,
+                'choice_label' => 'name'
+            ])
+            ->add('status', EntityType::class, [
+                'class' => Status::class,
+                'choice_label' => 'name'
+            ])
         ;
     }
 

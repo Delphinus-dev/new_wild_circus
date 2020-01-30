@@ -1,4 +1,14 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+<div class="container my-5">
+    <div class="row d-flex justify-content-center">
+        <div class="mx-3">
+            {{ form_row(form.email, { 'label': 'Your email' }) }}
+            {{ form_row(form.theme, { 'label': 'Choose a theme' }) }}
+            {{ form_row(form.message, { 'label': 'Your message' }) }}
+            <button class="btn btn-warning">{{ button_label|default('Save') }}</button>
+        </div>
+    </div>
+</div>
+
 {{ form_end(form) }}

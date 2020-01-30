@@ -21,8 +21,20 @@ body {
 
 .navbar {
     height: 60px;
-    color: $link-color;
+    color: $primary-color;
     background-color: black;
+}
+
+.navbar li a {
+    display: block;
+    text-decoration: none;
+    color: $link-color;
+}
+
+.navbar li a:hover {
+    text-decoration: none;
+    color: $link-hover-color;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 // SIDEBAR
@@ -50,17 +62,11 @@ body {
 
 #sidebar-wrapper {
     position: fixed;
-
     left: 250px;
-
     width: 250px;
-
     height: 86.5%;
-
     margin-left: -250px;
-
-    //overflow-y: scroll;
-
+    overflow-y: hidden;
     overflow-x: hidden;
     background: #000;
 
@@ -96,12 +102,10 @@ body {
     list-style: none;
 }
 
-
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
 }
-
 
 .sidebar-nav li a {
     display: block;
@@ -109,33 +113,21 @@ body {
     color: $link-color;
 }
 
-
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: $link-hover-color;
     background: rgba(255, 255, 255, 0.2);
 }
 
-
 .sidebar-nav li a:active, .sidebar-nav li a:focus {
     text-decoration: none;
 }
 
-
 .sidebar-nav>.sidebar-brand {
+    color: $link-hover-color;
     height: 65px;
     font-size: 18px;
     line-height: 60px;
-}
-
-.sidebar-nav>.sidebar-brand a {
-    color: $link-color;
-}
-
-
-.sidebar-nav>.sidebar-brand a:hover {
-    color: $link-hover-color;
-    background: none;
 }
 
 // PAGE CONTENT
@@ -199,8 +191,20 @@ body {
     bottom: 0;
     width: 100%;
     background-color: black;
-    color: $link-color;
+    color: $primary-color;
     text-align: center;
+}
+
+.footer li a {
+    display: block;
+    text-decoration: none;
+    color: $link-color;
+}
+
+.footer li a:hover {
+    text-decoration: none;
+    color: $link-hover-color;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .row {

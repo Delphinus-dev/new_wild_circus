@@ -1,39 +1,73 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contact index{% endblock %}
+{% block title %}Wild Circus Admin -Contact messages{% endblock %}
 
 {% block body %}
-    <h1>Contact index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Message</th>
-                <th>Time</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for contact in contacts %}
-            <tr>
-                <td>{{ contact.id }}</td>
-                <td>{{ contact.email }}</td>
-                <td>{{ contact.message }}</td>
-                <td>{{ contact.time ? contact.time|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('contact_show', {'id': contact.id}) }}">show</a>
-                    <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+{# page-content-wrapper #}
+<div id="page-content-wrapper">
+    <div class="container-fluid">
 
-    <a href="{{ path('contact_new') }}">Create new</a>
+        {% if is_granted('ROLE_ADMIN') %}
+
+            <h1>Contact index</h1>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Time</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for contact in contacts %}
+                    <tr>
+                        <td>{{ contact.id }}</td>
+                        <td>{{ contact.email }}</td>
+                        <td>{{ contact.message }}</td>
+                        <td>{{ contact.time ? contact.time|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>
+                            <a href="{{ path('contact_show', {'id': contact.id}) }}">show</a>
+                            <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">No records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            {% else %}
+
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col mb-4">
+                    {% if contacts is defined and not null %}
+                        {% for contact in contacts %}
+                            <div class="card">
+                                <img src="https://cdn.pixabay.com/photo/2016/01/30/22/04/typewriter-1170657_960_720.jpg" class="card-img-top" alt="Background photo">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ contact.theme }}</h5>
+                                    <p class="card-subtitle">
+                                        Sent on : {{ contact.time ? contact.time|date('Y-m-d H:i:s') : '' }}
+                                    </p>
+                                    <p class="card-text">{{ contact.message }}</p>
+                                </div>
+                            </div>
+                        {% else %}
+                            <tr>
+                                <td colspan="5">No records found.</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+        {% endif %}
+                <button id="menu-toggle" class="btn btn-secondary"><i id="toggleIcon" class="fa fa-angle-double-down">
+                    </i> Toggle Menu <i class="fa fa-filter"></i></button>
+    </div>
+</div>
 {% endblock %}

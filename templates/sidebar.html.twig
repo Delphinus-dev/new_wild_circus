@@ -2,9 +2,8 @@
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
                 {% if is_granted('ROLE_USER') %}
-                    {# TODO insérer le nom ou l'email du visiteur connecté #}
-                {% else %}
                     Welcome !
+                    {# TODO insérer le nom ou l'email du visiteur connecté #}
                 {% endif %}
             </li>
             <li>
@@ -15,7 +14,7 @@
                 {% endif %}
             </li>
 
-            {# TODO : si possible de mettre une variable dans le path :
+            {# TODO : si c'est possible de mettre une variable dans le path :
 
             {% if sections is defined and not null %}
                 {% for section in sections %}
@@ -28,19 +27,19 @@
             #}
 
             <li>
-                <a href="{{ path('philosophy') }}">Our philosophy</a>
+                <a href="{{ path('philosophy') }}">Philosophy</a>
             </li>
             <li>
-                <a href="{{ path('performer_index') }}">The performers</a>
+                <a href="{{ path('performer_index') }}">Performers</a>
             </li>
             <li>
-                <a href="{{ path('event_index') }}">The shows</a>
+                <a href="{{ path('event_index') }}">Shows</a>
             </li>
             <li>
                 <a href="{{ path('under_construction') }}">About</a>
             </li>
             <li>
-                <a href="{{ path('contact_index') }}">Contact</a>
+                <a href="{{ path('contact_new') }}">Contact</a>
             </li>
             <li>
                 <a href="{{ path('under_construction') }}">Booking</a>
