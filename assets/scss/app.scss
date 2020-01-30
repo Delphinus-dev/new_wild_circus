@@ -14,10 +14,10 @@
 // MAIN CSS
 
 body {
-    background-color: lightgray;
+    background-color: black;
 }
 
-// SIDEBAR AND FOOTER
+// SIDEBAR
 
 #menu-toggle{
     color:white;
@@ -27,8 +27,6 @@ body {
     transform: rotate(90deg);
     background: black;
 }
-
-
 
 #wrapper {
     padding-left: 250px;
@@ -42,10 +40,7 @@ body {
     padding-left: 0px;
 }
 
-
 #sidebar-wrapper {
-
-
     position: fixed;
 
     left: 250px;
@@ -65,13 +60,10 @@ body {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-
 }
 
-
-#wrapper.toggled #sidebar-wrapper {width: 0px;
+#wrapper.toggled #sidebar-wrapper {width: 0;
 }
-
 
 #page-content-wrapper {
     width: auto;
@@ -79,18 +71,13 @@ body {
     padding: 50px;
 }
 
-
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
     width:100%;
 }
 
-
-
-
 /* Sidebar Styles */
-
 
 .sidebar-nav {
     position: absolute;
@@ -143,6 +130,23 @@ body {
     background: none;
 }
 
+// PAGE CONTENT
+
+.container {
+    position: relative;
+    max-width: 800px; /* Maximum width */
+    margin: 0 auto; /* Center it */
+}
+
+.container .content {
+    position: absolute; /* Position the background text */
+    top: 0; /* At the bottom. Use bottom:0 to append it to the bottom */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    padding: 20px; /* Some padding */
+}
 
 /**
 
@@ -179,6 +183,7 @@ body {
 
 **/
 
+// FOOTER
 
 .footer {
     position: fixed;
@@ -191,6 +196,6 @@ body {
 }
 
 .row {
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: 0;
+    margin-left: 0;
 }
