@@ -46,6 +46,11 @@ class Section
      */
     private $button;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $photo;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -119,6 +124,18 @@ class Section
     public function setButton(string $button): self
     {
         $this->button = $button;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(string $photo): self
+    {
+        $this->photo = $photo;
 
         return $this;
     }
