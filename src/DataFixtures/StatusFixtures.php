@@ -20,6 +20,7 @@ class StatusFixtures extends Fixture
         foreach (self::STATUSES as $name => $data) {
             $status = new Status();
             $status->setName($name);;
+            $manager->persist($status);
             // $this->addReference('test_'.$i, $test);
             $i++;
 

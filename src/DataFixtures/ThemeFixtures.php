@@ -25,7 +25,8 @@ class ThemeFixtures extends Fixture
         $i = 0;
         foreach (self::THEMES as $name => $data) {
             $theme = new Theme();
-            $theme->setName($name);;
+            $theme->setName($name);
+            $manager->persist($theme);
             // $this->addReference('test_'.$i, $test);
             $i++;
 
