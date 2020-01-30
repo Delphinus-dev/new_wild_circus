@@ -21,18 +21,18 @@ class UserFixtures extends Fixture
                 ],
         ],
         '2' => [
-            'first_name' => 'Jean',
-            'last_name' => 'Dujardin',
-            'email' => 'jean@mail.fr',
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'email' => 'john@mail.com',
             'password' => '1234',
             'roles' => [
                 'ROLE_USER',,
             ],
         ],
         '3' => [
-            'first_name' => 'Julie',
-            'last_name' => 'Pietri',
-            'email' => 'julie@mail.fr',
+            'first_name' => 'July',
+            'last_name' => 'Andrews',
+            'email' => 'july@mail.com',
             'password' => 'azerty',
             'roles' => [
                 'ROLE_USER',
