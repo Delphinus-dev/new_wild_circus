@@ -18,4 +18,20 @@ class HomeController extends AbstractController
             'sections' => $sectionRepository->findAll(),
         ]);
     }
+
+    /**
+     * @Route("/construction", name="under_construction", methods={"GET"})
+     */
+    public function construction(): Response
+    {
+        return $this->render('home/construction.html.twig');
+    }
+
+    /**
+     * @Route("/philosophy", name="philosophy", methods={"GET"})
+     */
+    public function philosophy(): Response
+    {
+        return $this->render('home/philosophy.html.twig');
+    }
 }

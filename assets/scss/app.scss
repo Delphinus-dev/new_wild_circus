@@ -17,10 +17,30 @@ body {
     background-color: black;
 }
 
+// NAVBAR
+
+.navbar {
+    height: 60px;
+    color: $primary-color;
+    background-color: black;
+}
+
+.navbar li a {
+    display: block;
+    text-decoration: none;
+    color: $link-color;
+}
+
+.navbar li a:hover {
+    text-decoration: none;
+    color: $link-hover-color;
+    background: rgba(255, 255, 255, 0.2);
+}
+
 // SIDEBAR
 
 #menu-toggle{
-    color:white;
+    color: $link-color;
     position: absolute;
     top: 46px;
     left: -45.75px;
@@ -37,22 +57,16 @@ body {
 }
 
 #wrapper.toggled {
-    padding-left: 0px;
+    padding-left: 0;
 }
 
 #sidebar-wrapper {
     position: fixed;
-
     left: 250px;
-
     width: 250px;
-
     height: 86.5%;
-
     margin-left: -250px;
-
-    overflow-y: scroll;
-
+    overflow-y: hidden;
     overflow-x: hidden;
     background: #000;
 
@@ -88,46 +102,32 @@ body {
     list-style: none;
 }
 
-
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
 }
 
-
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: $link-color;
 }
-
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: $link-hover-color;
     background: rgba(255, 255, 255, 0.2);
 }
-
 
 .sidebar-nav li a:active, .sidebar-nav li a:focus {
     text-decoration: none;
 }
 
-
 .sidebar-nav>.sidebar-brand {
+    color: $link-hover-color;
     height: 65px;
     font-size: 18px;
     line-height: 60px;
-}
-
-.sidebar-nav>.sidebar-brand a {
-    color: #999999;
-}
-
-
-.sidebar-nav>.sidebar-brand a:hover {
-    color: #fff;
-    background: none;
 }
 
 // PAGE CONTENT
@@ -143,7 +143,7 @@ body {
     top: 0; /* At the bottom. Use bottom:0 to append it to the bottom */
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-    color: #f1f1f1; /* Grey text */
+    color: $primary-color;
     width: 100%; /* Full width */
     padding: 20px; /* Some padding */
 }
@@ -191,8 +191,20 @@ body {
     bottom: 0;
     width: 100%;
     background-color: black;
-    color: white;
+    color: $primary-color;
     text-align: center;
+}
+
+.footer li a {
+    display: block;
+    text-decoration: none;
+    color: $link-color;
+}
+
+.footer li a:hover {
+    text-decoration: none;
+    color: $link-hover-color;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .row {
