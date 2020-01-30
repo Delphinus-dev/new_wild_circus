@@ -15,9 +15,13 @@
     <body>
         {% include "navbar.html.twig" %}
 
+        <div id="wrapper">
         {% include "sidebar.html.twig" %}
 
         {% block body %}{% endblock %}
+        </div>
+
+        {% include "footer.html.twig" %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
