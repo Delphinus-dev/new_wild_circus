@@ -17,10 +17,18 @@ body {
     background-color: black;
 }
 
+// NAVBAR
+
+.navbar {
+    height: 60px;
+    color: $link-color;
+    background-color: black;
+}
+
 // SIDEBAR
 
 #menu-toggle{
-    color:white;
+    color: $link-color;
     position: absolute;
     top: 46px;
     left: -45.75px;
@@ -37,7 +45,7 @@ body {
 }
 
 #wrapper.toggled {
-    padding-left: 0px;
+    padding-left: 0;
 }
 
 #sidebar-wrapper {
@@ -51,7 +59,7 @@ body {
 
     margin-left: -250px;
 
-    overflow-y: scroll;
+    //overflow-y: scroll;
 
     overflow-x: hidden;
     background: #000;
@@ -98,13 +106,13 @@ body {
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: $link-color;
 }
 
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: $link-hover-color;
     background: rgba(255, 255, 255, 0.2);
 }
 
@@ -121,12 +129,12 @@ body {
 }
 
 .sidebar-nav>.sidebar-brand a {
-    color: #999999;
+    color: $link-color;
 }
 
 
 .sidebar-nav>.sidebar-brand a:hover {
-    color: #fff;
+    color: $link-hover-color;
     background: none;
 }
 
@@ -143,7 +151,7 @@ body {
     top: 0; /* At the bottom. Use bottom:0 to append it to the bottom */
     background: rgb(0, 0, 0); /* Fallback color */
     background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-    color: #f1f1f1; /* Grey text */
+    color: $primary-color;
     width: 100%; /* Full width */
     padding: 20px; /* Some padding */
 }
@@ -191,7 +199,7 @@ body {
     bottom: 0;
     width: 100%;
     background-color: black;
-    color: white;
+    color: $link-color;
     text-align: center;
 }
 
