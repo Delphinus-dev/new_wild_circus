@@ -14,45 +14,45 @@ class EventFixtures extends Fixture
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
             aliquip ex ea commodo consequat',
-            'first_day' => 'test',
-            'last_day' => 'test',
+            'first_day' => '2020-01-01',
+            'last_day' => '2020-03-30',
         ],
         'Wild Fire' => [
             'photo' => 'https://cdn.pixabay.com/photo/2016/01/13/05/58/heart-1137272_960_720.jpg',
             'description' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.y',
-            'first_day' => 'test',
-            'last_day' => 'test',
+            'first_day' => '2020-04-01',
+            'last_day' => '2020-06-30',
         ],
         'Funny Burlesque' => [
             'photo' => 'https://cdn.pixabay.com/photo/2018/05/10/00/44/strong-3386583_960_720.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
             aliquip ex ea commodo consequat',
-            'first_day' => 'test',
-            'last_day' => 'test',
+            'first_day' => '2020-05-01',
+            'last_day' => '2020-08-30',
         ],
         'Windy dreams' => [
             'photo' => 'https://cdn.pixabay.com/photo/2016/02/24/08/31/girl-1219339_960_720.jpg',
             'description' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            'first_day' => 'test',
-            'last_day' => 'test',
+            'first_day' => '2020-09-01',
+            'last_day' => '2020-12-31',
         ],
         'Music and wonders' => [
             'photo' => 'https://cdn.pixabay.com/photo/2016/12/14/12/09/violin-1906127_960_720.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
             aliquip ex ea commodo consequat',
-            'first_day' => 'test',
-            'last_day' => 'test',
+            'first_day' => '2020-09-01',
+            'last_day' => '2020-12-26',
         ],
         'Welcome to Kazakhstan !' => [
             'photo' => 'https://cdn.pixabay.com/photo/2015/03/05/19/18/studio-660804_960_720.jpg',
             'description' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            'first_day' => 'test',
-            'last_day' => 'test',
+            'first_day' => '2021-01-01',
+            'last_day' => '2021-03-30',
         ],
     ];
 
