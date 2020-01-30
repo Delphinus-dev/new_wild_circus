@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wild Circus -Performers{% endblock %}
+
+{% block body %}
+
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+
+        {% if is_granted('ROLE_ADMIN') %}
+
+        <h1>All performers</h1>
+
+        <a href="{{ path('performer_new') }}">Add new</a>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Photo</th>
+                <th>Bio</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for performer in performers %}
+                <tr>
+                    <td>{{ performer.id }}</td>
+                    <td>{{ performer.name }}</td>
+                    <td>{{ performer.photo }}</td>
+                    <td>{{ performer.bio }}</td>
+                    <td>
+                        <a href="{{ path('performer_show', {'id': performer.id}) }}">show</a>
+                        <a href="{{ path('performer_edit', {'id': performer.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">No records found.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% else %}
+
+        {% if performers is defined and not null %}
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col mb-4">
+                {% for performer in performers %}
+                    <div class="card">
+                        <img src="{{ performer.photo }}" class="card-img-top" alt="Performer photo">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ performer.name }}</h5>
+                            {% if events is defined and not null %}
+                            <p class="card-subtitle">
+                                {% for event in events %}
+                                <a class="btn btn-warning" href="{{ path('event_show', {'id': event.id}) }}">{{ event.name }}</a>
+                                {% enfor %}
+                            </p>
+                            {% endif %}
+                            <p class="card-text">{{ performer.bio }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% else %}
+                <div class="container">
+                    <img src="https://cdn.pixabay.com/photo/2018/07/22/20/02/horse-3555391_960_720.jpg" alt="Illustration" style="width:100%;">
+                    <div class="content">
+                        <h1>Oops sorry! No content available here...</h1>
+                        <p>This page is still under construction. Our apologies.</p>
+                    </div>
+                </div>
+            {% endif %}
+            {% endif %}
+
+            <button id="menu-toggle" class="btn btn-secondary"><i id="toggleIcon" class="fa fa-angle-double-down">
+                </i> Toggle Menu <i class="fa fa-filter"></i></button>
+        </div>
+    </div>
+{% endblock %}

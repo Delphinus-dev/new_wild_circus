@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wild Circus -Shows{% endblock %}
+
+{% block body %}
+
+    {# page-content-wrapper #}
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+
+        {% if is_granted('ROLE_ADMIN') %}
+
+        <h1>All shows</h1>
+
+        <a href="{{ path('event_new') }}">Create new</a>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Photo</th>
+                <th>Description</th>
+                <th>FirstDay</th>
+                <th>LastDay</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for event in events %}
+                <tr>
+                    <td>{{ event.id }}</td>
+                    <td>{{ event.name }}</td>
+                    <td>{{ event.photo }}</td>
+                    <td>{{ event.description }}</td>
+                    <td>{{ event.firstDay ? event.firstDay|date('Y-m-d') : '' }}</td>
+                    <td>{{ event.lastDay ? event.lastDay|date('Y-m-d') : '' }}</td>
+                    <td>
+                        <a href="{{ path('event_show', {'id': event.id}) }}">show</a>
+                        <a href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">No records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% else %}
+
+            {% if events is defined and not null %}
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col mb-4">
+                    {% for event in events %}
+                        <div class="card">
+                            <img src="{{ event.photo }}" class="card-img-top" alt="Event photo">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ event.name }}</h5>
+                                <p class="card-subtitle">
+                                    {{ event.firstDay ? event.firstDay|date('Y-m-d') : '' }} to {{ event.lastDay ? event.lastDay|date('Y-m-d') : '' }}
+                                </p>
+                                <p class="card-text">{{ event.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="container">
+                    <img src="https://cdn.pixabay.com/photo/2018/07/22/20/02/horse-3555391_960_720.jpg" alt="Illustration" style="width:100%;">
+                    <div class="content">
+                        <h1>Oops sorry! No content available here...</h1>
+                        <p>This page is still under construction. Our apologies.</p>
+                    </div>
+                </div>
+            {% endif %}
+            {% endif %}
+
+            <button id="menu-toggle" class="btn btn-secondary"><i id="toggleIcon" class="fa fa-angle-double-down">
+                </i> Toggle Menu <i class="fa fa-filter"></i></button>
+    </div>
+</div>
+
+{% endblock %}

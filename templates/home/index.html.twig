@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wild Circus -Welcome !{% endblock %}
+
+{% block body %}
+
+{# page-content-wrapper #}
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+
+        {% if sections is defined and not null %}
+            {% for section in sections %}
+                <div class="container">
+                    <img src="{{ section.photo }}" alt="{{ section.title }}" style="width:100%;">
+                    <div class="content">
+                        <h1>{{ section.title }}</h1>
+                        <h2>{{ section.tagline }}</h2>
+                        <p>{{ section.summary }}</p>
+                        <p>{{ section.invitation }}</p>
+                        {# index button #}
+                        <a class="btn btn-dark" href="{{ path(' {{ section.name }} _index') }}" role="button">{{ section.button }}</a>
+                        {# booking button #}
+                        <a class="btn btn-warning" href="#" role="button">Booking</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+        <div class="container">
+            <img src="https://cdn.pixabay.com/photo/2017/08/06/06/26/silhouette-2589471_960_720.jpg" alt="Illustration" style="width:100%;">
+            <div class="content">
+                <h1>Sorry, no content yet</h1>
+                <p>The site is still under construction. See you soon !</p>
+            </div>
+        </div>
+        {% endif %}
+
+        <button id="menu-toggle" class="btn btn-secondary"><i id="toggleIcon" class="fa fa-angle-double-down">
+            </i> Toggle Menu <i class="fa fa-filter"></i></button>
+    </div>
+</div>
+
+{% endblock %}

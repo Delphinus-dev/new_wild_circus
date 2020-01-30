@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wild Circus -Contact message number {{ contact.id }}{% endblock %}
+
+{% block body %}
+
+    {# page-content-wrapper #}
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+
+            {% if contact is defined and not null %}
+
+                <div class="container">
+                    <img src="https://cdn.pixabay.com/photo/2016/01/30/22/04/typewriter-1170657_960_720.jpg" alt="Background image" style="width:100%;">
+                    <div class="content">
+                        <h1>{{ contact.theme }}</h1>
+                        <p>Sent on : {{ contact.time ? contact.time|date('Y-m-d H:i:s') : '' }}</p>
+                        <p>{{ contact.message }}</p>
+
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <div>ID : {{ contact.id }} - Status : {{ contact.status }}</div>
+                            <div>
+                                <a href="{{ path('contact_index') }}">Back to list</a>
+                            </div>
+                            <div>
+                                <a href="{{ path('contact_edit', {'id': contact.id}) }}">Edit</a>
+                            </div>
+                            <div>
+                                {{ include('contact/_delete_form.html.twig') }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% else %}
+                <div class="container">
+                    <img src="https://cdn.pixabay.com/photo/2018/07/22/20/02/horse-3555391_960_720.jpg" alt="Illustration" style="width:100%;">
+                    <div class="content">
+                        <h1>Oops, no content here...</h1>
+                        <p>There is no contact message with these specifications.</p>
+                        <div><a class="btn btn-warning" href="{{ path('contact_index') }}">Back to list</a></div>
+                    </div>
+                </div>
+            {% endif %}
+
+            <button id="menu-toggle" class="btn btn-secondary"><i id="toggleIcon" class="fa fa-angle-double-down">
+                </i> Toggle Menu <i class="fa fa-filter"></i></button>
+        </div>
+    </div>
+{% endblock %}

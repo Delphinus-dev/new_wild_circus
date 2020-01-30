@@ -1,0 +1,213 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT
+(https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+
+ * Modified by Delphinus_dev for Wild Circus website V2
+ * Project made during Wild Code School training (Strasbourg - France)
+ */
+
+@import "~bootstrap/scss/bootstrap";
+@import "vars";
+
+// MAIN CSS
+
+body {
+    background-color: black;
+}
+
+// NAVBAR
+
+.navbar {
+    height: 60px;
+    color: $primary-color;
+    background-color: black;
+}
+
+.navbar li a {
+    display: block;
+    text-decoration: none;
+    color: $link-color;
+}
+
+.navbar li a:hover {
+    text-decoration: none;
+    color: $link-hover-color;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+// SIDEBAR
+
+#menu-toggle{
+    color: $link-color;
+    position: absolute;
+    top: 46px;
+    left: -45.75px;
+    transform: rotate(90deg);
+    background: black;
+}
+
+#wrapper {
+    padding-left: 250px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 0;
+}
+
+#sidebar-wrapper {
+    position: fixed;
+    left: 250px;
+    width: 250px;
+    height: 86.5%;
+    margin-left: -250px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background: #000;
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {width: 0;
+}
+
+#page-content-wrapper {
+    width: auto;
+    position: absolute;
+    padding: 50px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+    width:100%;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: $link-color;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: $link-hover-color;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav>.sidebar-brand {
+    color: $link-hover-color;
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+// PAGE CONTENT
+
+.container {
+    position: relative;
+    max-width: 800px; /* Maximum width */
+    margin: 0 auto; /* Center it */
+}
+
+.container .content {
+    position: absolute; /* Position the background text */
+    top: 0; /* At the bottom. Use bottom:0 to append it to the bottom */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: $primary-color;
+    width: 100%; /* Full width */
+    padding: 20px; /* Some padding */
+}
+
+/**
+
+@media(min-width:768px) {
+
+#wrapper {
+    padding-left: 0;
+  }
+
+#wrapper.toggled {
+    padding-left: 0px;
+  }
+
+#sidebar-wrapper {
+    width: 250px;
+  }
+
+#wrapper.toggled
+#sidebar-wrapper {
+    width: 250px;
+  }
+
+#page-content-wrapper {
+    padding-left: 50px;
+    position: relative;
+  }
+
+#wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+ padding-left: 35px; }
+
+}
+
+**/
+
+// FOOTER
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: $primary-color;
+    text-align: center;
+}
+
+.footer li a {
+    display: block;
+    text-decoration: none;
+    color: $link-color;
+}
+
+.footer li a:hover {
+    text-decoration: none;
+    color: $link-hover-color;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}

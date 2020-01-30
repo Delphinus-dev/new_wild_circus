@@ -1,0 +1,48 @@
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                {% if is_granted('ROLE_USER') %}
+                    Welcome !
+                    {# TODO insérer le nom ou l'email du visiteur connecté #}
+                {% endif %}
+            </li>
+            <li>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('admin_index') }}">My dashboard</a>
+                {% elseif is_granted('ROLE_USER') %}
+                    <a href="{{ path('under_construction') }}">My dashboard</a>
+                {% endif %}
+            </li>
+
+            {# TODO : si c'est possible de mettre une variable dans le path :
+
+            {% if sections is defined and not null %}
+                {% for section in sections %}
+                    <li>
+                        <a href="{{ path('..._index') }}">{{ section.title }}</a>
+                    </li>
+                    {% else %}
+            {% endfor %}
+            {% endif %}
+            #}
+
+            <li>
+                <a href="{{ path('philosophy') }}">Philosophy</a>
+            </li>
+            <li>
+                <a href="{{ path('performer_index') }}">Performers</a>
+            </li>
+            <li>
+                <a href="{{ path('event_index') }}">Shows</a>
+            </li>
+            <li>
+                <a href="{{ path('under_construction') }}">About</a>
+            </li>
+            <li>
+                <a href="{{ path('contact_new') }}">Contact</a>
+            </li>
+            <li>
+                <a href="{{ path('under_construction') }}">Booking</a>
+            </li>
+        </ul>
+    </div>

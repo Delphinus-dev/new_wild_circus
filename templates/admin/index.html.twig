@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wild Circus -Admin dashboard{% endblock %}
+
+{% block body %}
+
+    {# page-content-wrapper #}
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="card-deck">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Sections</div>
+                <div class="card-body">
+                    <h5 class="card-title">Homepage sections</h5>
+                    <p class="card-text">Sections allow you to change the texts appearing on the homepage.</p>
+                    <a href="#" class="btn btn-light">Sections</a>
+                </div>
+            </div>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Users</div>
+                <div class="card-body">
+                    <h5 class="card-title">Accounts</h5>
+                    <p class="card-text">Manage all accounts</p>
+                    <a href="{{ path('user_index') }}" class="btn btn-light">Users</a>
+                </div>
+            </div>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Performers</div>
+                <div class="card-body">
+                    <h5 class="card-title">Performer bios</h5>
+                    <p class="card-text">Add and edit informations about all performers.</p>
+                    <a href="{{ path('performer_index') }}" class="btn btn-light">Performers</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Contact messages</div>
+                <div class="card-body">
+                    <h5 class="card-title">Messages from visitors</h5>
+                    <p class="card-text">Read and manage contact messages.</p>
+                    <a href="{{ path('contact_index') }}" class="btn btn-light">Contact messages</a>
+                </div>
+            </div>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Shows</div>
+                <div class="card-body">
+                    <h5 class="card-title">General informations</h5>
+                    <p class="card-text">Add and edit all informations about the shows</p>
+                    <a href="{{ path('event_index') }}" class="btn btn-light">Shows</a>
+                </div>
+            </div>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Reservations</div>
+                <div class="card-body">
+                    <h5 class="card-title">Booking informations</h5>
+                    <p class="card-text">Read and manage all information about ticket bookings.</p>
+                    <a href="{{ path('booking_index') }}" class="btn btn-light">Reservations</a>
+                </div>
+            </div>
+        </div>
+        <button id="menu-toggle" class="btn btn-secondary"><i id="toggleIcon" class="fa fa-angle-double-down">
+            </i> Toggle Menu <i class="fa fa-filter"></i></button>
+    </div>
+</div>
+
+{% endblock %}
