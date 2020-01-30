@@ -26,7 +26,7 @@ class UserFixtures extends Fixture
             'email' => 'john@mail.com',
             'password' => '1234',
             'roles' => [
-                'ROLE_USER',,
+                'ROLE_USER',
             ],
         ],
         '3' => [
